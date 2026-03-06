@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-wood-50: #fdf8f0;
+  --color-wood-100: #f5e6d0;
+  --color-wood-200: #e8c9a0;
+  --color-wood-300: #d4a574;
+  --color-wood-400: #c4864e;
+  --color-wood-500: #a86b35;
+  --color-wood-600: #8b5529;
+  --color-wood-700: #6e4220;
+  --color-wood-800: #563318;
+  --color-wood-900: #3d2410;
+  --color-wood-950: #2a1809;
+
+  --color-forest-50: #f0f7f0;
+  --color-forest-100: #d4ead4;
+  --color-forest-200: #a8d5a8;
+  --color-forest-300: #7cbf7c;
+  --color-forest-400: #56a556;
+  --color-forest-500: #3d8b3d;
+  --color-forest-600: #2d6b2d;
+  --color-forest-700: #1f4f1f;
+  --color-forest-800: #163816;
+  --color-forest-900: #0d240d;
+
+  --color-gold-50: #fefce8;
+  --color-gold-100: #fef9c3;
+  --color-gold-200: #fef08a;
+  --color-gold-300: #fde047;
+  --color-gold-400: #facc15;
+  --color-gold-500: #d4a017;
+  --color-gold-600: #a47e11;
+  --color-gold-700: #7a5d0b;
+  --color-gold-800: #554008;
+  --color-gold-900: #352804;
+
+  --color-cream: #fdf8f0;
+  --color-charcoal: #2a1809;
+  --color-burn: #c45e20;
+  --color-burn-light: #e87d3e;
+  --color-burn-dark: #8b3a0f;
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-engrave: 'Special Elite', cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+}
+
+/* Laser beam glow effect */
+@keyframes laserGlow {
+  0%, 100% { filter: drop-shadow(0 0 4px #ff6b00) drop-shadow(0 0 8px #ff4500); }
+  50% { filter: drop-shadow(0 0 8px #ff6b00) drop-shadow(0 0 16px #ff4500) drop-shadow(0 0 24px #ff2200); }
+}
+
+@keyframes smokeRise {
+  0% { opacity: 0.6; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-40px) scale(2); }
+}
+
+.laser-glow {
+  animation: laserGlow 0.8s ease-in-out infinite;
+}
+
+.wood-texture {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 20px,
+      rgba(139, 85, 41, 0.05) 20px,
+      rgba(139, 85, 41, 0.05) 21px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 60px,
+      rgba(139, 85, 41, 0.03) 60px,
+      rgba(139, 85, 41, 0.03) 61px
+    );
+  background-color: #c4864e;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-wood-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-wood-400);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-wood-500);
+}
